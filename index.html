@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Human Engine — Chess</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div class="wrap">
+<h1>♞ Human Engine</h1>
+<div id="st" class="st"></div>
+<div id="bd" class="bd"></div>
+<div id="inf" class="inf"></div>
+<div id="opn" class="st" style="font-size:13.5px;color:var(--acc)"></div>
+<div class="row"><button onclick="newGame(1)">New · White</button><button onclick="newGame(-1)">New · Black</button><button onclick="undo()">Undo</button><button onclick="flip=!flip;draw()">Flip</button></div>
+<div class="row"><label>Level <select id="lv" onchange="lvl=+this.value"><option value="1">Beginner</option><option value="2">Club</option><option value="3" selected>Strong</option><option value="4">Master</option><option value="5">Maximum</option></select></label>
+<label><input type="checkbox" id="hm" checked onchange="human=this.checked"> Human-like</label></div>
+<div class="row"><label>Opening / defence <select id="ops" onchange="opSel=+this.value"></select></label></div>
+<div id="ml" class="ml">No moves yet.</div>
+<div class="note">Own engine: alpha-beta search, quiescence, move ordering. Human-like mode picks natural, varied moves that stay close to the best line, uses a small opening repertoire and pauses to “think”. Turn it off (or pick Maximum) for pure best-move play. Pawns auto-promote to queens.</div>
+</div>
+<script src="engine.js"></script>
+<script src="openings.js"></script>
+<script src="openings-extra.js"></script>
+<script src="app.js"></script>
+</body></html>
